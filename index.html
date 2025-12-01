@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Universal Weight Subspace Hypothesis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --cosmic-dark: #050510;
+            --cosmic-purple: #7b2cbf;
+            --cosmic-blue: #3a0ca3;
+            --neon-cyan: #4cc9f0;
+            --neon-pink: #f72585;
+        }
+
+        body {
+            background-color: var(--cosmic-dark);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cosmic-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--cosmic-purple);
+        }
+
+        /* Cosmic Canvas */
+        #cosmos-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(15, 15, 30, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Typography Styling for Title */
+        .title-word {
+            display: inline-block;
+        }
+        .title-small {
+            font-size: 0.5em;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            vertical-align: middle;
+            color: #a0a0a0;
+        }
+        .title-main {
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, #4cc9f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: var(--cosmic-dark);
+            border-radius: 1rem;
+        }
+        
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 1.2rem;
+            background: linear-gradient(45deg, var(--neon-pink), var(--cosmic-blue), var(--neon-cyan));
+            z-index: -1;
+            opacity: 0.7;
+            filter: blur(8px);
+        }
+
+        /* Chart Placeholder Grid */
+        .grid-bg {
+            background-size: 20px 20px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Background Simulation -->
+    <canvas id="cosmos-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4" id="navbar">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-sm font-bold tracking-widest uppercase opacity-80">Universal Subspace</div>
+            <a href="https://arxiv.org/pdf/2407.00066" target="_blank" class="glass-panel px-4 py-2 rounded-full text-xs hover:bg-white/10 transition flex items-center gap-2">
+                <i class="fa-solid fa-file-pdf"></i> Read Paper
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative pt-20">
+        
+        <!-- Abstract Decoration -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight">
+                <span class="title-small block md:inline mb-2 md:mb-0">The</span> 
+                <span class="title-main">UNIVERSAL</span> <br class="hidden md:block" />
+                <span class="title-small block md:inline my-2 md:my-0">Weight</span> 
+                <span class="title-main">SUBSPACE</span> <br class="hidden md:block" />
+                <span class="title-main text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">HYPOTHESIS</span>
+            </h1>
+
+            <!-- Authors -->
+            <div class="mt-8 mb-12 animate-fade-in-up">
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-lg md:text-xl font-light text-gray-300">
+                    <span class="hover:text-white transition cursor-default">Prakhar Kaushik</span>
+                    <span class="hover:text-white transition cursor-default">Shravan Chaudhari</span>
+                    <span class="hover:text-white transition cursor-default">Ankit Vaidya</span>
+                    <span class="hover:text-white transition cursor-default">Rama Chellappa</span>
+                    <span class="hover:text-white transition cursor-default">Alan Yuille</span>
+                </div>
+                <div class="mt-4 text-sm uppercase tracking-widest text-gray-500">Johns Hopkins University</div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
+                <a href="#key-insights" class="px-8 py-3 bg-white text-black font-bold rounded-full hover:scale-105 transition transform duration-200">
+                    Explore Findings
+                </a>
+                <button class="px-8 py-3 glass-panel rounded-full text-gray-300 cursor-not-allowed group relative overflow-hidden">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <i class="fa-brands fa-github"></i> Code Releasing Soon
+                    </span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 animate-bounce text-gray-500">
+            <i class="fa-solid fa-arrow-down"></i>
+        </div>
+    </header>
+
+    <!-- Abstract / Hook Section -->
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Chaos Converges into Order</h2>
+            <p class="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
+                We analyze over <span class="text-white font-bold">1,100 deep neural networks</span>—including 500 Mistral-7B LoRAs and 500 Vision Transformers. 
+                We provide the first large-scale empirical evidence that networks systematically converge to 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-bold">shared, low-dimensional spectral subspaces</span>, 
+                regardless of initialization, task, or domain.
+            </p>
+        </div>
+    </section>
+
+    <!-- Key Insights Grid -->
+    <section id="key-insights" class="py-24 px-6 bg-black/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition duration-300 gradient-border">
+                    <div class="h-12 w-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6 text-purple-400">
+                        <i class="fa-solid fa-network-wired text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Geometric Universality</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Models trained on disjoint data collapse into the same parametric subspace. This suggests architecture dictates geometry more than data does.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition duration-300 gradient-border">
+                    <div class="h-12 w-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-6 text-cyan-400">
+                        <i class="fa-solid fa-compress text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Extreme Efficiency</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Storing only subspace coefficients enables massive compression (up to 100x). Train new tasks by optimizing lightweight coefficients instead of full weights.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition duration-300 gradient-border">
+                    <div class="h-12 w-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-6 text-pink-400">
+                        <i class="fa-solid fa-layer-group text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Model Merging</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Seamlessly merge models without data. Our method outperforms SOTA merging baselines (Task Arithmetic, TIES) by aligning spectral directions.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Visuals / Data Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                
+                <!-- Text Side -->
+                <div class="w-full md:w-1/3">
+                    <h2 class="text-3xl font-bold mb-6">The Spectral Decay</h2>
+                    <p class="text-gray-300 mb-6">
+                        The plot illustrates the explained variance ratio of principal components across 500 Vision Transformers. 
+                        <br><br>
+                        Despite random initializations and different datasets, the majority of variance is captured in the first few dimensions (the "Universal Subspace").
+                    </p>
+                    <div class="flex gap-4 text-sm text-gray-500">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-cyan-500"></span> 500 ViTs
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-pink-500"></span> 500 Mistral LoRAs
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Side (CSS/HTML representation of a Scree Plot) -->
+                <div class="w-full md:w-2/3 h-96 glass-panel rounded-xl p-6 relative grid-bg flex items-end justify-center gap-1 overflow-hidden">
+                    <!-- Title overlay -->
+                    <div class="absolute top-4 left-6 text-xs uppercase tracking-widest text-gray-500">Explained Variance / Component</div>
+                    
+                    <!-- Bars representing the decay -->
+                    <!-- High variance at start -->
+                    <div class="w-2 h-[80%] bg-cyan-500 rounded-t animate-[pulse_3s_infinite]"></div>
+                    <div class="w-2 h-[60%] bg-cyan-500 rounded-t opacity-90"></div>
+                    <div class="w-2 h-[45%] bg-cyan-500 rounded-t opacity-80"></div>
+                    <div class="w-2 h-[30%] bg-cyan-500 rounded-t opacity-70"></div>
+                    <div class="w-2 h-[20%] bg-cyan-500 rounded-t opacity-60"></div>
+                    <div class="w-2 h-[15%] bg-cyan-500 rounded-t opacity-50"></div>
+                    <div class="w-2 h-[10%] bg-pink-500 rounded-t opacity-80"></div> <!-- Mixing model types visual -->
+                    <div class="w-2 h-[8%] bg-cyan-500 rounded-t opacity-40"></div>
+                    <div class="w-2 h-[6%] bg-cyan-500 rounded-t opacity-30"></div>
+                    <div class="w-2 h-[5%] bg-cyan-500 rounded-t opacity-20"></div>
+                    <!-- Long tail -->
+                    <div class="w-full h-[4%] bg-gradient-to-r from-cyan-900 to-transparent rounded-t opacity-30 mt-auto self-end"></div>
+                    
+                    <!-- Overlay graphic line -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+                        <path d="M 40 100 Q 80 300 800 350" fill="none" stroke="#f72585" stroke-width="2" stroke-dasharray="5,5" />
+                        <text x="100" y="100" fill="#f72585" font-size="12" class="font-mono">Shared Subspace Boundary</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implications Section -->
+    <section class="py-24 px-6 bg-gradient-to-b from-transparent to-black">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-12">Universal Implications</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 text-left border-l-2 border-cyan-500">
+                    <h4 class="text-xl font-bold text-cyan-400 mb-2">Sustainable AI</h4>
+                    <p class="text-sm text-gray-400">Drastically reduces carbon footprint for training large-scale neural models by reusing subspaces.</p>
+                </div>
+                <div class="p-6 text-left border-l-2 border-purple-500">
+                    <h4 class="text-xl font-bold text-purple-400 mb-2">Transfer Learning</h4>
+                    <p class="text-sm text-gray-400">Explains why techniques like parameter-efficient fine-tuning succeed across architectures.</p>
+                </div>
+                <div class="p-6 text-left border-l-2 border-pink-500">
+                    <h4 class="text-xl font-bold text-pink-400 mb-2">Interpretability</h4>
+                    <p class="text-sm text-gray-400">Offers new insights into the intrinsic organization of information within deep networks.</p>
+                </div>
+                <div class="p-6 text-left border-l-2 border-white">
+                    <h4 class="text-xl font-bold text-white mb-2">Democratization</h4>
+                    <p class="text-sm text-gray-400">Allows under-resourced researchers to adapt SOTA models without massive compute clusters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800 bg-black text-center">
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 text-gray-200">Ready to explore the subspace?</h3>
+            <button class="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg transition duration-200 cursor-not-allowed border border-white/20">
+                <i class="fa-brands fa-github mr-2"></i> Code Coming Soon
+            </button>
+        </div>
+        <p class="text-gray-600 text-sm">
+            © 2024 Universal Subspace Hypothesis Team.<br>
+            Johns Hopkins University.
+        </p>
+    </footer>
+
+    <!-- Canvas Animation Script -->
+    <script>
+        const canvas = document.getElementById('cosmos-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+        
+        // Configuration
+        const particleCount = 200;
+        const connectionDistance = 100;
+        const convergenceSpeed = 0.05;
+        
+        // A class to represent chaotic entities converging
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+                // Colors representing different tasks/models
+                const colors = ['#4cc9f0', '#7b2cbf', '#f72585', '#ffffff'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Subspace target (the convergence plane)
+                // Let's define the subspace as a diagonal band across the screen
+                this.targetY = null; 
+            }
+
+            update(time) {
+                // Chaotic movement base
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Subspace Convergence Effect
+                // We create a "wave" of order that passes through time
+                // The subspace is a sine wave moving across the screen
+                const subspaceY = height / 2 + Math.sin(this.x * 0.002 + time * 0.001) * (height * 0.2);
+                
+                // Calculate distance to subspace
+                const dy = subspaceY - this.y;
+                
+                // Apply force towards subspace
+                // The force is weak, preserving some chaos, but ensuring general convergence
+                this.vy += dy * 0.0005;
+                
+                // Damping to prevent infinite oscillation
+                this.vx *= 0.99;
+                this.vy *= 0.99;
+
+                // Add some noise (chaos)
+                this.vx += (Math.random() - 0.5) * 0.02;
+                this.vy += (Math.random() - 0.5) * 0.02;
+
+                // Boundary check
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = 0.7;
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+            animate();
+        }
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        function animate(time = 0) {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw connections (Subspace Formation)
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
+                p1.update(time);
+                p1.draw();
+
+                // Connect particles if they are close (Converging entities)
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < connectionDistance) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(123, 44, 191, ${1 - dist / connectionDistance})`;
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame((t) => animate(t));
+        }
+
+        window.addEventListener('resize', resize);
+        init();
+        
+        // Navbar transparency on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/80', 'backdrop-blur-md');
+            } else {
+                nav.classList.remove('bg-black/80', 'backdrop-blur-md');
+            }
+        });
+    </script>
+</body>
+</html>
