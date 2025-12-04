@@ -136,9 +136,8 @@
     <nav class="fixed w-full z-50 transition-all duration-300 py-4" id="navbar">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="text-sm font-bold tracking-widest uppercase opacity-80">Universal Subspace</div>
-            <a href="/assets/Universal_Subspace.pdf" target="_blank" class="glass-panel px-4 py-2 rounded-full text-xs hover:bg-white/10 transition flex items-center gap-2">
+            <a href="assets/Universal_Subspace.pdf" target="_blank" class="glass-panel px-4 py-2 rounded-full text-xs hover:bg-white/10 transition flex items-center gap-2">
                 <i class="fa-solid fa-file-pdf"></i> Read Paper
-            </a>
             </a>
         </div>
     </nav>
@@ -173,8 +172,20 @@
 
             <!-- CTA -->
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
-                <a href="#key-insights" class="px-8 py-3 bg-white text-black font-bold rounded-full hover:scale-105 transition transform duration-200">
+                <a href="#key-insights" class="px-3 py-2 bg-white text-black font-bold rounded-full hover:scale-105 transition transform duration-200">
                     Explore Findings
+                </a>
+            <a href="https://arxiv.org/" target="_blank" class="px-8 py-3 glass-panel bg-white text-black rounded-full font-bold hover:scale-105 transition transform duration-200 group relative overflow-hidden">
+                <span class="relative z-10 flex items-center gap-2">
+                    <i class="fa-solid fa-book"></i> arXiv
+                </span>
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            </a>
+                <a href="assets/Universal_Subspace.pdf" class="px-8 py-3 glass-panel bg-white text-black rounded-full font-bold hover:scale-105 transition transform duration-200 group relative overflow-hidden">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf"></i> Paper
+                    </span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                 </a>
                 <button class="px-8 py-3 glass-panel rounded-full text-gray-300 cursor-not-allowed group relative overflow-hidden">
                     <span class="relative z-10 flex items-center gap-2">
@@ -323,6 +334,19 @@
             </div>
         </div>
     </section>
+    
+<section class="py-24 px-6" id="BibTeX">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">BibTeX</h2>
+    <div class="glass-panel p-6 rounded-xl overflow-x-auto">
+      <pre><code class="text-sm text-gray-300">@article{kaushik2025universal,
+  author    = {Kaushik, Prakhar and Chaudhari, Shravan and Vaidya, Ankit and Chellappa, Rama and Yuille, Alan},
+  title     = {The Universal Weight Subspace Hypothesis},
+  year      = {2025},
+}</code></pre>
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer class="py-12 border-t border-gray-800 bg-black text-center">
@@ -333,6 +357,7 @@
             </button>
         </div>
         <p class="text-gray-600 text-sm">
+            <a href="mailto:prakhark2@gmail.com" class="hover:text-cyan-400 transition">✉ prakhark2@gmail.com</a><br>
             © 2024 Universal Subspace Hypothesis Team.<br>
             Johns Hopkins University.
         </p>
