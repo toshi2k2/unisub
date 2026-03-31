@@ -1,0 +1,11 @@
+numpy
+matplotlib
+pillow
+torch
+torchvision
+timm
+huggingface_hub
+safetensors
+weightwatcher
+gdown
+scienceplots

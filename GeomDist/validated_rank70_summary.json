@@ -1,0 +1,53 @@
+{
+  "aggregate_layer_scree_summary": {
+    "components_for_90pct": 16,
+    "components_for_95pct": 17,
+    "components_for_99pct": 19,
+    "num_layers": 18,
+    "top1": 0.13770602064000237,
+    "top3_cumulative": 0.27567041210002374,
+    "top5_cumulative": 0.3924042108572192
+  },
+  "alpha_q_all": 0.1501039669601017,
+  "alpha_q_arch": 0.197672229867697,
+  "analysis_root": "/mnt/data0/prakhar/geomdist_unisub/analysis_alpha_unisub_rank70_v1",
+  "control_layer_count": 12,
+  "excluded_texture_models": true,
+  "figure_model_names": [
+    "archimedes"
+  ],
+  "global_scree_summary": {
+    "components_for_90pct": 16,
+    "components_for_95pct": 18,
+    "components_for_99pct": 19,
+    "top1": 0.09334111958742142,
+    "top3_cumulative": 0.2338094562292099,
+    "top5_cumulative": 0.3566362261772156
+  },
+  "num_models": 20,
+  "num_reference_models": 10,
+  "rank_threshold": 0.7,
+  "repo_root": "/mnt/data1/prakhar/GeomDist",
+  "retained_spectral_layer_count": 18,
+  "retained_spectral_layers": [
+    "model.emb_noise.weight",
+    "model.x_embedder.mlp.weight",
+    "model.layers.0.0.weight",
+    "model.layers.0.1.weight",
+    "model.layers.0.2.weight",
+    "model.layers.1.0.weight",
+    "model.layers.1.2.weight",
+    "model.layers.2.0.weight",
+    "model.layers.2.2.weight",
+    "model.layers.3.0.weight",
+    "model.layers.3.2.weight",
+    "model.layers.4.0.weight",
+    "model.layers.4.1.weight",
+    "model.layers.4.2.weight",
+    "model.layers.5.0.weight",
+    "model.layers.5.1.weight",
+    "model.final_layer.0.weight",
+    "model.final_layer.2.weight"
+  ],
+  "spectral_layer_count": 22
+}

@@ -1,0 +1,7 @@
+protocol,variance_threshold,num_targets,original_mean_top1,reconstructed_mean_top1,mean_delta_top1,delta_std_top1,agreement_mean,family_savings_percent_mean
+iid,0.8,5,0.8100,0.7826,-0.0274,0.0066,0.8912,8.42
+iid,0.9,5,0.8100,0.8045,-0.0055,0.0029,0.9552,5.23
+iid,0.95,5,0.8100,0.8085,-0.0015,0.0013,0.9768,2.78
+ood,0.8,5,0.8100,0.7791,-0.0309,0.0105,0.8852,8.31
+ood,0.9,5,0.8100,0.8041,-0.0059,0.0036,0.9535,5.17
+ood,0.95,5,0.8100,0.8085,-0.0015,0.0014,0.9756,2.68

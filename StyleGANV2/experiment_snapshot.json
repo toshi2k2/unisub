@@ -1,0 +1,33 @@
+{
+  "source_pool": "20 downloaded StyleGAN2 checkpoints from models.json",
+  "alpha_run": "conservative all-20 common-layer analysis",
+  "alpha_q_all": 0.05722518915489639,
+  "alpha_q_arch": 0.09070011931249121,
+  "num_selected_models": 20,
+  "num_retained_layers": 9,
+  "retained_layers": [
+    "synthesis.b128.conv0.weight",
+    "synthesis.b128.conv1.weight",
+    "synthesis.b16.conv0.weight",
+    "synthesis.b256.conv0.weight",
+    "synthesis.b256.conv1.weight",
+    "synthesis.b32.conv1.weight",
+    "synthesis.b64.conv0.weight",
+    "synthesis.b64.conv1.weight",
+    "synthesis.b8.conv1.weight"
+  ],
+  "skipped_image_eval_targets": [
+    {
+      "target_slug": "beetles",
+      "reason": "TensorFlow pickle version too low"
+    },
+    {
+      "target_slug": "wikiart",
+      "reason": "generator shape mismatch during live load"
+    }
+  ],
+  "notes": [
+    "IS is the validated no-reference metric in the current alpha-filtered StyleGAN2 pipeline.",
+    "The current pipeline writes reconstructed images and metrics, but not standalone reconstructed checkpoints."
+  ]
+}

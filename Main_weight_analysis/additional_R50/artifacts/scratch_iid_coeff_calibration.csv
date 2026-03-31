@@ -1,0 +1,10 @@
+target,variance_threshold,original_top1,reconstructed_top1,calibrated_top1,gain,eval_scope
+cifar100__edadaltocg_resnet50_cifar100,0.6,0.8093,0.6283,0.7578,+0.1295,full test
+cifar100__edadaltocg_resnet50_cifar100,0.7,0.8093,0.7102,0.7687,+0.0585,full test
+cifar100__edadaltocg_resnet50_cifar100,0.8,0.8093,0.7787,0.7806,+0.0019,full test
+cifar10__edadaltocg_resnet50_cifar10,0.6,0.9465,0.8500,0.9177,+0.0677,full test
+cifar10__edadaltocg_resnet50_cifar10,0.7,0.9465,0.9072,0.9254,+0.0182,full test
+cifar10__edadaltocg_resnet50_cifar10,0.8,0.9465,0.9319,0.9322,+0.0003,full test
+svhn__edadaltocg_resnet50_svhn,0.6,0.9632,0.6373,0.9119,+0.2746,full test
+svhn__edadaltocg_resnet50_svhn,0.7,0.9632,0.8120,0.9347,+0.1227,full test
+svhn__edadaltocg_resnet50_svhn,0.8,0.9632,0.9316,0.9500,+0.0184,full test

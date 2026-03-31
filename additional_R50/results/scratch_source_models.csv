@@ -1,0 +1,10 @@
+model_slug,dataset,scale_group,note
+cifar100__edadaltocg_resnet50_cifar100,CIFAR100,small,
+cifar10__edadaltocg_resnet50_cifar10,CIFAR10,small,
+imagenet1k__resnet50.a1_in1k,ImageNet-1k,large,
+imagenet21k__resnetv2_50x1_bit.goog_in21k,ImageNet-21k,large,large-data flexible source used for fitting only
+inaturalist__resnet50_inat_zenodo,iNaturalist,large,large-data flexible source used for fitting only
+places365__resnet50_places365,Places365,large,
+radimagenet__radimagenet_resnet50,RadImageNet,large,
+svhn__edadaltocg_resnet50_svhn,SVHN,small,
+vggface2__resnet50_scratch_dag,VGGFace2,large,

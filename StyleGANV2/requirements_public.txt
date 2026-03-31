@@ -1,0 +1,10 @@
+gdown
+matplotlib
+mega.py
+numpy
+pandas
+Pillow
+requests
+scipy
+torch
+tqdm

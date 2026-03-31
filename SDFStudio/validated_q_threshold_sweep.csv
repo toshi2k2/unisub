@@ -1,0 +1,7 @@
+q_threshold,num_retained_layers,retained_layers,q_arch,q_all
+0.2,3,"glin0.weight_v,clin0.weight_v,clin1.weight_v",0.2971306916956638,0.13890791663134228
+0.1,3,"glin0.weight_v,clin0.weight_v,clin1.weight_v",0.2971306916956638,0.13890791663134228
+0.08,3,"glin0.weight_v,clin0.weight_v,clin1.weight_v",0.2971306916956638,0.13890791663134228
+0.05,4,"glin0.weight_v,glin1.weight_v,clin0.weight_v,clin1.weight_v",0.19163092636979379,0.13890791663134228
+0.04,4,"glin0.weight_v,glin1.weight_v,clin0.weight_v,clin1.weight_v",0.19163092636979379,0.13890791663134228
+0.03,4,"glin0.weight_v,glin1.weight_v,clin0.weight_v,clin1.weight_v",0.19163092636979379,0.13890791663134228

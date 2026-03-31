@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UniSub Loong Viewer</title>
+    <style>
+      :root {
+        --bg: #f5f0e7;
+        --panel: rgba(255, 255, 255, 0.86);
+        --ink: #111827;
+        --muted: #475569;
+        --line: rgba(17, 24, 39, 0.12);
+        --accent: #0f766e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 32%),
+          radial-gradient(circle at top right, rgba(29, 78, 216, 0.14), transparent 28%),
+          linear-gradient(180deg, #fbf7ef 0%, var(--bg) 100%);
+      }
+
+      .shell {
+        width: min(1400px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 32px 0 40px;
+      }
+
+      .hero {
+        margin-bottom: 24px;
+        padding: 28px 28px 24px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--panel);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 16px 50px rgba(15, 23, 42, 0.08);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 0.95;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 74ch;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .hero code {
+        font-family: "JetBrains Mono", "SFMono-Regular", monospace;
+        background: rgba(15, 118, 110, 0.08);
+        padding: 0.18rem 0.35rem;
+        border-radius: 0.4rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--panel);
+        overflow: hidden;
+        box-shadow: 0 16px 50px rgba(15, 23, 42, 0.08);
+      }
+
+      .panel header {
+        padding: 18px 20px 14px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(90deg, rgba(17, 24, 39, 0.98), rgba(31, 41, 55, 0.92));
+        color: white;
+      }
+
+      .panel header h2 {
+        margin: 0 0 6px;
+        font-size: 1.2rem;
+      }
+
+      .panel header p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.95rem;
+      }
+
+      .viewport {
+        height: min(72vh, 760px);
+      }
+
+      .footer {
+        margin-top: 20px;
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.75);
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .footer a {
+        color: var(--accent);
+      }
+
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .viewport {
+          height: 52vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Universal Subspace Viewer</p>
+        <h1>Loong: original vs IID UniSub reconstruction</h1>
+        <p>
+          This viewer compares the original GeomDist <code>loong</code> point cloud with its IID reconstruction
+          under the Universal Subspace. The meshes are loaded from committed
+          <code>PLY</code> assets in <code>assets/showcase/</code>. Serve this file through GitHub Pages or a local
+          static server such as <code>python -m http.server</code> from the repo root.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <header>
+            <h2>Original</h2>
+            <p>Reference point cloud exported from the validated GeomDist run.</p>
+          </header>
+          <div class="viewport" id="viewer-original"></div>
+        </article>
+
+        <article class="panel">
+          <header>
+            <h2>IID reconstruction</h2>
+            <p>UniSub projection under the retained shared basis.</p>
+          </header>
+          <div class="viewport" id="viewer-iid"></div>
+        </article>
+      </section>
+
+      <section class="footer">
+        Drag to orbit, scroll to zoom, and compare the retained geometry. The same assets also appear as a static
+        paper-facing panel in <a href="../GeomDist/README.md">GeomDist/README.md</a>.
+      </section>
+    </main>
+
+    <script type="module">
+      import * as THREE from "https://unpkg.com/three@0.169.0/build/three.module.js";
+      import { OrbitControls } from "https://unpkg.com/three@0.169.0/examples/jsm/controls/OrbitControls.js";
+      import { PLYLoader } from "https://unpkg.com/three@0.169.0/examples/jsm/loaders/PLYLoader.js";
+
+      const specs = [
+        {
+          mountId: "viewer-original",
+          path: "../assets/showcase/original_loong_sample.ply",
+        },
+        {
+          mountId: "viewer-iid",
+          path: "../assets/showcase/iid_loong_sample.ply",
+        },
+      ];
+
+      const loader = new PLYLoader();
+
+      function applySpectralColors(geometry) {
+        geometry.computeBoundingBox();
+        const { min, max } = geometry.boundingBox;
+        const positions = geometry.attributes.position;
+        const colors = new Float32Array(positions.count * 3);
+        const span = new THREE.Vector3(
+          Math.max(max.x - min.x, 1e-6),
+          Math.max(max.y - min.y, 1e-6),
+          Math.max(max.z - min.z, 1e-6)
+        );
+
+        for (let index = 0; index < positions.count; index += 1) {
+          const x = positions.getX(index);
+          const y = positions.getY(index);
+          const z = positions.getZ(index);
+          const nx = (x - min.x) / span.x;
+          const ny = (y - min.y) / span.y;
+          const nz = (z - min.z) / span.z;
+          const color = new THREE.Color().setHSL(0.95 - 0.8 * nx, 0.72, 0.62 - 0.08 * ny + 0.05 * nz);
+          colors[index * 3] = color.r;
+          colors[index * 3 + 1] = color.g;
+          colors[index * 3 + 2] = color.b;
+        }
+
+        geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+        geometry.center();
+        return geometry;
+      }
+
+      function createScene(mount, path) {
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(mount.clientWidth, mount.clientHeight);
+        mount.appendChild(renderer.domElement);
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, mount.clientWidth / mount.clientHeight, 0.01, 100);
+        camera.position.set(0.8, 0.5, 2.8);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.target.set(0, 0, 0);
+
+        scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+
+        const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
+        keyLight.position.set(2.5, 3.0, 2.0);
+        scene.add(keyLight);
+
+        const rimLight = new THREE.DirectionalLight(0x9ad7ff, 0.9);
+        rimLight.position.set(-2.0, 1.0, -1.5);
+        scene.add(rimLight);
+
+        loader.load(path, (geometry) => {
+          applySpectralColors(geometry);
+          const material = new THREE.PointsMaterial({
+            size: 0.018,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.94,
+            sizeAttenuation: true,
+          });
+          const cloud = new THREE.Points(geometry, material);
+          scene.add(cloud);
+        });
+
+        function resize() {
+          camera.aspect = mount.clientWidth / mount.clientHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(mount.clientWidth, mount.clientHeight);
+        }
+
+        window.addEventListener("resize", resize);
+
+        function tick() {
+          controls.update();
+          renderer.render(scene, camera);
+          requestAnimationFrame(tick);
+        }
+
+        tick();
+      }
+
+      specs.forEach(({ mountId, path }) => {
+        const mount = document.getElementById(mountId);
+        createScene(mount, path);
+      });
+    </script>
+  </body>
+</html>

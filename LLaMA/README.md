@@ -1,5 +1,7 @@
 # LLaMA Spectral Analysis
 
+For the newer alpha/scree follow-up analysis built on top of this directory, start with [`../Main_weight_analysis/llama/README.md`](../Main_weight_analysis/llama/README.md).
+
 Spectral analysis and PCA for LLaMA model weights across multiple fine-tuned variants.
 
 ## Workflow

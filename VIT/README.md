@@ -1,5 +1,7 @@
 # ViT Spectral Analysis
 
+For the newer alpha/scree follow-up analysis built on top of this directory, start with [`../Main_weight_analysis/vit/README.md`](../Main_weight_analysis/vit/README.md).
+
 Spectral analysis and PCA for Vision Transformer (ViT) model weights across multiple fine-tuned variants.
 
 ## Workflow

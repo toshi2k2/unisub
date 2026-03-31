@@ -1,0 +1,10 @@
+layer
+synthesis.b128.conv0.weight
+synthesis.b128.conv1.weight
+synthesis.b16.conv0.weight
+synthesis.b256.conv0.weight
+synthesis.b256.conv1.weight
+synthesis.b32.conv1.weight
+synthesis.b64.conv0.weight
+synthesis.b64.conv1.weight
+synthesis.b8.conv1.weight

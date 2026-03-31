@@ -1,0 +1,11 @@
+layer
+layer2.0.conv2.weight
+layer2.1.conv2.weight
+layer2.2.conv2.weight
+layer2.3.conv2.weight
+layer3.0.conv2.weight
+layer3.1.conv2.weight
+layer3.2.conv2.weight
+layer3.3.conv2.weight
+layer3.4.conv2.weight
+layer3.5.conv2.weight

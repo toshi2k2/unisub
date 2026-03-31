@@ -1,0 +1,6 @@
+layer,branch_family,parameter_family,shape,alpha_mean,alpha_std,alpha_valid_models,fraction_in_range,q_l,stat_keep,q_keep,final_keep
+glin0.weight_v,geometry,weight_v,256x39,2.0082652575264897,0.11029584562985846,32,0.375,0.25219303499066215,True,True,True
+glin1.weight_v,geometry,weight_v,256x256,5.669484198152619,0.7112207944661022,32,0.65625,0.05140671522506031,True,True,True
+glin2.weight_v,geometry,weight_v,257x256,1.7513176327722,0.19467248693791703,32,0.0625,0.038350637930279936,False,False,False
+clin0.weight_v,color,weight_v,256x321,3.2219216318796815,0.4767758457922364,32,1.0,0.27614780962826824,True,True,True
+clin1.weight_v,color,weight_v,256x256,3.0757917050760852,0.2189625583647584,32,1.0,0.3766759141360138,True,True,True

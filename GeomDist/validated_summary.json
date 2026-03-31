@@ -1,0 +1,197 @@
+{
+  "alpha_q_all": 0.1501039669601017,
+  "alpha_q_arch": 0.197672229867697,
+  "alpha_q_threshold_sweep": [
+    {
+      "num_retained_layers": "9",
+      "q_all": "0.1501039669601017",
+      "q_arch": "0.26298212840488855",
+      "q_threshold": "0.2",
+      "retained_layers": "model.emb_noise.weight,model.layers.0.1.weight,model.layers.0.2.weight,model.layers.1.0.weight,model.layers.1.2.weight,model.layers.2.0.weight,model.layers.2.2.weight,model.layers.3.2.weight,model.final_layer.0.weight"
+    },
+    {
+      "num_retained_layers": "17",
+      "q_all": "0.1501039669601017",
+      "q_arch": "0.2134361442688308",
+      "q_threshold": "0.1",
+      "retained_layers": "model.emb_noise.weight,model.x_embedder.mlp.weight,model.layers.0.0.weight,model.layers.0.1.weight,model.layers.0.2.weight,model.layers.1.0.weight,model.layers.1.2.weight,model.layers.2.0.weight,model.layers.2.2.weight,model.layers.3.0.weight,model.layers.3.2.weight,model.layers.4.0.weight,model.layers.4.2.weight,model.layers.5.0.weight,model.layers.5.1.weight,model.final_layer.0.weight,model.final_layer.2.weight"
+    },
+    {
+      "num_retained_layers": "17",
+      "q_all": "0.1501039669601017",
+      "q_arch": "0.2134361442688308",
+      "q_threshold": "0.08",
+      "retained_layers": "model.emb_noise.weight,model.x_embedder.mlp.weight,model.layers.0.0.weight,model.layers.0.1.weight,model.layers.0.2.weight,model.layers.1.0.weight,model.layers.1.2.weight,model.layers.2.0.weight,model.layers.2.2.weight,model.layers.3.0.weight,model.layers.3.2.weight,model.layers.4.0.weight,model.layers.4.2.weight,model.layers.5.0.weight,model.layers.5.1.weight,model.final_layer.0.weight,model.final_layer.2.weight"
+    },
+    {
+      "num_retained_layers": "18",
+      "q_all": "0.1501039669601017",
+      "q_arch": "0.197672229867697",
+      "q_threshold": "0.05",
+      "retained_layers": "model.emb_noise.weight,model.x_embedder.mlp.weight,model.layers.0.0.weight,model.layers.0.1.weight,model.layers.0.2.weight,model.layers.1.0.weight,model.layers.1.2.weight,model.layers.2.0.weight,model.layers.2.2.weight,model.layers.3.0.weight,model.layers.3.2.weight,model.layers.4.0.weight,model.layers.4.1.weight,model.layers.4.2.weight,model.layers.5.0.weight,model.layers.5.1.weight,model.final_layer.0.weight,model.final_layer.2.weight"
+    },
+    {
+      "num_retained_layers": "19",
+      "q_all": "0.1501039669601017",
+      "q_arch": "0.18234574690931524",
+      "q_threshold": "0.04",
+      "retained_layers": "model.emb_noise.weight,model.x_embedder.mlp.weight,model.layers.0.0.weight,model.layers.0.1.weight,model.layers.0.2.weight,model.layers.1.0.weight,model.layers.1.1.weight,model.layers.1.2.weight,model.layers.2.0.weight,model.layers.2.2.weight,model.layers.3.0.weight,model.layers.3.2.weight,model.layers.4.0.weight,model.layers.4.1.weight,model.layers.4.2.weight,model.layers.5.0.weight,model.layers.5.1.weight,model.final_layer.0.weight,model.final_layer.2.weight"
+    },
+    {
+      "num_retained_layers": "20",
+      "q_all": "0.1501039669601017",
+      "q_arch": "0.1666233152185193",
+      "q_threshold": "0.03",
+      "retained_layers": "model.emb_noise.weight,model.x_embedder.mlp.weight,model.layers.0.0.weight,model.layers.0.1.weight,model.layers.0.2.weight,model.layers.1.0.weight,model.layers.1.1.weight,model.layers.1.2.weight,model.layers.2.0.weight,model.layers.2.2.weight,model.layers.3.0.weight,model.layers.3.1.weight,model.layers.3.2.weight,model.layers.4.0.weight,model.layers.4.1.weight,model.layers.4.2.weight,model.layers.5.0.weight,model.layers.5.1.weight,model.final_layer.0.weight,model.final_layer.2.weight"
+    }
+  ],
+  "analysis_root": "/mnt/data0/prakhar/geomdist_unisub/analysis_alpha_unisub_v1",
+  "figure_model_names": [
+    "valley",
+    "wukong",
+    "tower",
+    "lamp"
+  ],
+  "filtered_by_q_names": [
+    "model.layers.1.1.weight",
+    "model.layers.2.1.weight",
+    "model.layers.3.1.weight"
+  ],
+  "filtered_by_stats_names": [
+    "model.layers.5.2.weight"
+  ],
+  "global_scree_summary": {
+    "components_for_90pct": 16,
+    "components_for_95pct": 18,
+    "components_for_99pct": 19,
+    "top1": 0.09334111958742142,
+    "top3_cumulative": 0.2338094562292099,
+    "top5_cumulative": 0.3566362261772156
+  },
+  "layer_basis_row_count": 18,
+  "memory_savings_summary": [
+    {
+      "basis_rank": "10",
+      "explained_variance_target": "0.6",
+      "full_savings_fraction": "0.4050163938692134",
+      "original_full_mib": "422.193603515625",
+      "original_full_params_total": "110675520",
+      "original_spectral_mib": "341.9921875",
+      "original_spectral_params_total": "89651200",
+      "spectral_savings_fraction": "0.4999977691319246",
+      "unisub_full_mib": "251.19827270507812",
+      "unisub_full_params_total": "65850120",
+      "unisub_spectral_mib": "170.99685668945312",
+      "unisub_spectral_params_total": "44825800"
+    },
+    {
+      "basis_rank": "12",
+      "explained_variance_target": "0.7",
+      "full_savings_fraction": "0.32401239226163114",
+      "original_full_mib": "422.193603515625",
+      "original_full_params_total": "110675520",
+      "original_spectral_mib": "341.9921875",
+      "original_spectral_params_total": "89651200",
+      "spectral_savings_fraction": "0.3999973229583096",
+      "unisub_full_mib": "285.39764404296875",
+      "unisub_full_params_total": "74815280",
+      "unisub_spectral_mib": "205.19622802734375",
+      "unisub_spectral_params_total": "53790960"
+    },
+    {
+      "basis_rank": "14",
+      "explained_variance_target": "0.8",
+      "full_savings_fraction": "0.2430083906540489",
+      "original_full_mib": "422.193603515625",
+      "original_full_params_total": "110675520",
+      "original_spectral_mib": "341.9921875",
+      "original_spectral_params_total": "89651200",
+      "spectral_savings_fraction": "0.29999687678469444",
+      "unisub_full_mib": "319.5970153808594",
+      "unisub_full_params_total": "83780440",
+      "unisub_spectral_mib": "239.39559936523438",
+      "unisub_spectral_params_total": "62756120"
+    },
+    {
+      "basis_rank": "16",
+      "explained_variance_target": "0.9",
+      "full_savings_fraction": "0.16200438904646663",
+      "original_full_mib": "422.193603515625",
+      "original_full_params_total": "110675520",
+      "original_spectral_mib": "341.9921875",
+      "original_spectral_params_total": "89651200",
+      "spectral_savings_fraction": "0.1999964306110794",
+      "unisub_full_mib": "353.79638671875",
+      "unisub_full_params_total": "92745600",
+      "unisub_spectral_mib": "273.594970703125",
+      "unisub_spectral_params_total": "71721280"
+    },
+    {
+      "basis_rank": "18",
+      "explained_variance_target": "0.95",
+      "full_savings_fraction": "0.08100038743888438",
+      "original_full_mib": "422.193603515625",
+      "original_full_params_total": "110675520",
+      "original_spectral_mib": "341.9921875",
+      "original_spectral_params_total": "89651200",
+      "spectral_savings_fraction": "0.09999598443746427",
+      "unisub_full_mib": "387.9957580566406",
+      "unisub_full_params_total": "101710760",
+      "unisub_spectral_mib": "307.7943420410156",
+      "unisub_spectral_params_total": "80686440"
+    }
+  ],
+  "num_models": 20,
+  "num_reference_models": 10,
+  "paper_metric_summary": [
+    {
+      "gt_cd_mean": "0.05055725257843733",
+      "gt_cd_std": "0.007039927059484131",
+      "num_models": "20",
+      "num_reference_models": "10",
+      "pair_cd_mean": "nan",
+      "pair_cd_std": "nan",
+      "protocol": "original"
+    },
+    {
+      "gt_cd_mean": "0.08673885520547628",
+      "gt_cd_std": "0.08020226567933732",
+      "num_models": "20",
+      "num_reference_models": "10",
+      "pair_cd_mean": "0.02496821931563318",
+      "pair_cd_std": "0.07238729091480778",
+      "protocol": "iid"
+    },
+    {
+      "gt_cd_mean": "0.4262172348797321",
+      "gt_cd_std": "0.14764954984451148",
+      "num_models": "20",
+      "num_reference_models": "10",
+      "pair_cd_mean": "0.45132448673248293",
+      "pair_cd_std": "0.17405025261700874",
+      "protocol": "ood"
+    }
+  ],
+  "retained_spectral_layer_count": 18,
+  "retained_spectral_layers": [
+    "model.emb_noise.weight",
+    "model.x_embedder.mlp.weight",
+    "model.layers.0.0.weight",
+    "model.layers.0.1.weight",
+    "model.layers.0.2.weight",
+    "model.layers.1.0.weight",
+    "model.layers.1.2.weight",
+    "model.layers.2.0.weight",
+    "model.layers.2.2.weight",
+    "model.layers.3.0.weight",
+    "model.layers.3.2.weight",
+    "model.layers.4.0.weight",
+    "model.layers.4.1.weight",
+    "model.layers.4.2.weight",
+    "model.layers.5.0.weight",
+    "model.layers.5.1.weight",
+    "model.final_layer.0.weight",
+    "model.final_layer.2.weight"
+  ],
+  "spectral_layer_count": 22
+}

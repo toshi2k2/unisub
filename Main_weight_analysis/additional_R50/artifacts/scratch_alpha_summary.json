@@ -1,0 +1,32 @@
+{
+  "family": "scratch_resnet50",
+  "num_models": 9,
+  "num_common_layers": 52,
+  "num_retained_layers": 52,
+  "num_factorized_layers": 10,
+  "reconstruction_mode": "spatial",
+  "reconstruction_stage_min": 2,
+  "reconstruction_stage_max": 3,
+  "source_models": [
+    "cifar100__edadaltocg_resnet50_cifar100",
+    "cifar10__edadaltocg_resnet50_cifar10",
+    "imagenet1k__resnet50.a1_in1k",
+    "imagenet21k__resnetv2_50x1_bit.goog_in21k",
+    "inaturalist__resnet50_inat_zenodo",
+    "places365__resnet50_places365",
+    "radimagenet__radimagenet_resnet50",
+    "svhn__edadaltocg_resnet50_svhn",
+    "vggface2__resnet50_scratch_dag"
+  ],
+  "reconstruction_targets": [
+    "cifar100__edadaltocg_resnet50_cifar100",
+    "cifar10__edadaltocg_resnet50_cifar10",
+    "imagenet1k__resnet50.a1_in1k",
+    "imagenet21k__resnetv2_50x1_bit.goog_in21k",
+    "inaturalist__resnet50_inat_zenodo",
+    "places365__resnet50_places365",
+    "radimagenet__radimagenet_resnet50",
+    "svhn__edadaltocg_resnet50_svhn",
+    "vggface2__resnet50_scratch_dag"
+  ]
+}

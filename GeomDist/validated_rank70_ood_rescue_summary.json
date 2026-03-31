@@ -1,0 +1,15 @@
+{
+  "analysis_root": "/mnt/data0/prakhar/geomdist_unisub/analysis_alpha_unisub_rank70_v1",
+  "mean_baseline_gt_cd": 0.2576655335724354,
+  "mean_baseline_pair_cd": 0.25670694559812546,
+  "mean_best_gt_cd": 0.2537863478064537,
+  "mean_best_pair_cd": 0.252671480178833,
+  "num_rows": 2,
+  "output_root": "/mnt/data0/prakhar/geomdist_unisub/analysis_alpha_unisub_rank70_v1/coeff_finetune_ood_v1",
+  "protocol": "ood",
+  "rank_threshold": 0.7,
+  "scene_names": [
+    "valley",
+    "wukong"
+  ]
+}

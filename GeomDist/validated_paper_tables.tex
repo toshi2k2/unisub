@@ -1,0 +1,36 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lcccccc}
+\hline
+Variant & EV & Rank & Full Save (\%) & IID GT CD & OOD GT CD & OOD Pair CD \\
+\hline
+Baseline & 95\% & 18 & 8.10 & 0.0867 & 0.4262 & 0.4513 \\
+UniSub-80 & 80\% & 14 & 24.30 & 0.1214 & 0.4261 & 0.4465 \\
+UniSub-70 & 70\% & 12 & 32.40 & 0.1368 & 0.4319 & 0.4488 \\
+\hline
+\end{tabular}
+\caption{Compact GeomDist direct-projection summary. The retained layer set is unchanged across the three rows, so $q_{\mathrm{all}}=0.1501$ and $q_{\mathrm{arch}}=0.1977$ throughout. The 80\% variant is the best compressed operating point because it preserves OOD Chamfer while materially reducing parameter storage.}
+\label{tab:geomdist_direct_projection}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccc}
+\hline
+Variant & Scene & Rank & Best Step & GT CD $\downarrow$ & Pair CD $\downarrow$ \\
+\hline
+Baseline & valley & 17 & 400 & 0.2410 $\rightarrow$ 0.2345 & 0.2401 $\rightarrow$ 0.2333 \\
+Baseline & wukong & 17 & 0 & 0.2506 $\rightarrow$ 0.2506 & 0.2506 $\rightarrow$ 0.2506 \\
+UniSub-80 & valley & 13 & 400 & 0.2643 $\rightarrow$ 0.2568 & 0.2628 $\rightarrow$ 0.2549 \\
+UniSub-80 & wukong & 13 & 0 & 0.2416 $\rightarrow$ 0.2416 & 0.2411 $\rightarrow$ 0.2411 \\
+UniSub-70 & valley & 11 & 400 & 0.2687 $\rightarrow$ 0.2610 & 0.2672 $\rightarrow$ 0.2591 \\
+UniSub-70 & wukong & 11 & 0 & 0.2466 $\rightarrow$ 0.2466 & 0.2463 $\rightarrow$ 0.2463 \\
+\hline
+\end{tabular}
+\caption{Coefficient-only OOD rescue on the two strongest GeomDist OOD scenes. The rescue remains effective on \texttt{valley} under lower rank, but \texttt{wukong} does not improve beyond the projected initialization.}
+\label{tab:geomdist_ood_rescue}
+\end{table}
