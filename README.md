@@ -115,10 +115,13 @@ Important code note:
 ## Citation
 
 ```bibtex
-@article{kaushik2025universal,
-  title={The Universal Weight Subspace Hypothesis},
-  author={Kaushik, Prakhar and Chaudhari, Shravan and Vaidya, Ankit and Chellappa, Rama and Yuille, Alan},
-  journal={arXiv preprint arXiv:2512.05117},
-  year={2025}
+@misc{kaushik2025universalweightsubspacehypothesis,
+      title={The Universal Weight Subspace Hypothesis}, 
+      author={Prakhar Kaushik and Shravan Chaudhari and Ankit Vaidya and Rama Chellappa and Alan Yuille},
+      year={2025},
+      eprint={2512.05117},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2512.05117}, 
 }
 ```
