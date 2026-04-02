@@ -1,0 +1,19 @@
+<svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="120" rx="28" fill="#F5EFE6"/>
+  <rect x="74" y="26" width="102" height="68" rx="18" transform="rotate(-12 74 26)" fill="#E7F4F1" stroke="#0F766E" stroke-width="2.5"/>
+  <circle cx="98" cy="42" r="6" fill="#0F766E"/>
+  <circle cx="130" cy="58" r="6" fill="#0F766E"/>
+  <circle cx="156" cy="36" r="6" fill="#0F766E"/>
+  <circle cx="150" cy="78" r="6" fill="#0F766E"/>
+  <circle cx="42" cy="34" r="7" fill="#1D4ED8"/>
+  <circle cx="48" cy="86" r="7" fill="#1D4ED8"/>
+  <circle cx="214" cy="26" r="7" fill="#1D4ED8"/>
+  <circle cx="230" cy="88" r="7" fill="#1D4ED8"/>
+  <path d="M42 34L98 42" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <path d="M48 86L130 58" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <path d="M214 26L156 36" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <path d="M230 88L150 78" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <path d="M96 42L130 58L156 36L150 78" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <text x="194" y="58" fill="#111827" font-family="Space Grotesk, Avenir Next, sans-serif" font-size="30" font-weight="700">UniSub</text>
+  <text x="194" y="78" fill="#475569" font-family="IBM Plex Mono, SFMono-Regular, monospace" font-size="12">shared weight subspace</text>
+</svg>

@@ -2,7 +2,7 @@
 
 This folder contains the scratch ResNet-50 training and shared-subspace workflow used in the paper.
 
-Use this folder for the main CNN experiments. The later 9-model spatial-wise and alpha-based follow-up package now lives in [`../additional_R50`](../additional_R50/README.md), and the consolidated follow-up summaries live in [`../Main_weight_analysis`](../Main_weight_analysis/README.md).
+Use this folder for the main CNN experiments. The later 9-model spatial-wise and alpha-based ResNet-50 analysis now lives in [`../additional_R50`](../additional_R50/README.md), and the consolidated extended analysis lives in [`../Main_weight_analysis`](../Main_weight_analysis/README.md).
 
 ## What This Folder Contains
 
@@ -13,9 +13,9 @@ Use this folder for the main CNN experiments. The later 9-model spatial-wise and
 
 ## Position In The Repo
 
-- `CNN/`: original paper scratch-family code path
-- `additional_R50/`: later 9-model follow-up using spatial-wise calculation and alpha analysis
-- `Main_weight_analysis/`: follow-up analysis summaries that sit alongside the main experiment directories
+- `CNN/`: scratch-family training and reconstruction code
+- `additional_R50/`: later 9-model ResNet-50 analysis using spatial-wise calculation and alpha analysis
+- `Main_weight_analysis/`: extended analysis summaries that sit alongside the main experiment directories
 
 ## Supported Datasets
 
@@ -55,7 +55,7 @@ Important notes:
 
 - the model is initialized from scratch via `resnet50(weights=None)`
 - the best checkpoint is written to `models/`
-- the local sweep scripts are the fastest starting point if you want the original paper-style workflow
+- the local sweep scripts are the fastest starting point if you want the main workflow used for these experiments
 
 ## Build The Shared Subspace
 

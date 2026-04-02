@@ -2,7 +2,7 @@
 
 This page summarizes the later 9-model ResNet-50 analysis that used to live under `ResNet50/` and is now renamed `additional_R50/` to separate it from the scratch ResNet-50 experiments in `CNN/`.
 
-This is follow-up analysis. It adds:
+This is extended analysis. It adds:
 
 - alpha-based layer diagnostics
 - spatial-wise `3x3` factorization
@@ -39,7 +39,7 @@ Low-rank rescue remains strongest at aggressive truncation:
 | --- | --- |
 | [<img src="./artifacts/channel_mean_scree.png" alt="additional_R50 channel scree" width="100%">](./artifacts/channel_mean_scree.png) | [<img src="./artifacts/spatial_mean_scree.png" alt="additional_R50 spatial scree" width="100%">](./artifacts/spatial_mean_scree.png) |
 
-The channel scree is the nicer long-axis public-facing plot here because it keeps a large component axis; the spatial scree is retained mainly as supporting context.
+The channel scree is the cleaner long-axis plot here because it keeps a large component axis; the spatial scree is retained mainly as supporting context.
 
 ## Included Artifacts
 

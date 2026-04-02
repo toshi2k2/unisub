@@ -1,6 +1,6 @@
 # additional_R50 Scratch-UniSub Follow-Up
 
-This folder contains the later 9-model ResNet-50 follow-up package. It used to live under `ResNet50/` and is now renamed `additional_R50/` so it is clearly separated from the scratch ResNet-50 experiments in `CNN/`.
+This folder contains the later 9-model ResNet-50 analysis package. It used to live under `ResNet50/` and is now renamed `additional_R50/` so it is clearly separated from the scratch ResNet-50 experiments in `CNN/`.
 
 This is additional analysis. It includes:
 
@@ -49,7 +49,7 @@ Mean top-1 over the five evaluated scratch targets:
 
 ## Minimal Reproduction Code
 
-The wrapper scripts in [scripts/](scripts) show the exact command pattern used for the follow-up study.
+The wrapper scripts in [scripts/](scripts) show the exact command pattern used for this study.
 
 - [scripts/run_scratch_pipeline.sh](scripts/run_scratch_pipeline.sh)
 - [scripts/download_or_train_models.sh](scripts/download_or_train_models.sh)

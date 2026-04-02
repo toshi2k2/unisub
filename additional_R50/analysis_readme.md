@@ -1,3 +1,3 @@
 # Scratch ResNet50 Note
 
-`README.md` is the canonical summary for this scratch-only release package. The old broad analysis note was removed to keep the public package focused on the corrected scratch results only.
+Use [README.md](./README.md) as the canonical public summary for this scratch-only release package. It contains the validated results, retained-layer summaries, scree plots, and rerun commands. This note intentionally stays minimal so the user-facing entry point remains the README.

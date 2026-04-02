@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Universal Weight Subspace Hypothesis</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
       :root {
-        --bg: #f5efe6;
+        --bg: #f4ede2;
         --ink: #111827;
         --muted: #475569;
-        --panel: rgba(255, 255, 255, 0.82);
+        --panel: rgba(255, 255, 255, 0.84);
         --line: rgba(17, 24, 39, 0.12);
         --accent: #0f766e;
         --accent-2: #1d4ed8;
+        --warm: #b45309;
       }
 
       * {
@@ -51,7 +54,7 @@
       }
 
       .hero {
-        padding: 30px;
+        padding: 34px;
         margin-bottom: 22px;
       }
 
@@ -71,10 +74,36 @@
 
       .lead {
         max-width: 76ch;
-        margin: 0 0 20px;
+        margin: 0 0 18px;
         color: var(--muted);
         line-height: 1.6;
         font-size: 1.02rem;
+      }
+
+      .authors {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0 22px;
+      }
+
+      .stat {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.9);
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .stat strong {
+        color: var(--ink);
       }
 
       .buttons {
@@ -135,6 +164,19 @@
         line-height: 1.6;
       }
 
+      .callout {
+        margin-top: 14px;
+        padding: 16px 18px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(29, 78, 216, 0.08));
+        border: 1px solid rgba(15, 118, 110, 0.12);
+        color: var(--muted);
+      }
+
+      .callout strong {
+        color: var(--ink);
+      }
+
       .mini-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -176,15 +218,23 @@
       <section class="hero">
         <p class="eyebrow">Universal Subspace</p>
         <h1>The Universal Weight Subspace Hypothesis</h1>
+        <p class="authors">Prakhar Kaushik, Shravan Chaudhari, Ankit Vaidya, Rama Chellappa, Alan Yuille</p>
         <p class="lead">
-          This served landing page exposes the repo’s interactive `PLY` viewer directly. The original paper folders
-          remain in `CNN`, `VIT`, `GPT2`, and `LLaMA`, while the newer alpha-metric and scree-based follow-up package
-          lives in `Main_weight_analysis/` and `additional_R50/`.
+          This page opens the interactive `PLY` result directly. The repo itself combines the main UniSub experiments,
+          the extended weight-space analysis, and the strongest public visual results in one place.
         </p>
+        <div class="stats">
+          <span class="stat"><strong>4</strong> core model families</span>
+          <span class="stat"><strong>9</strong> extended ResNet-50 models</span>
+          <span class="stat"><strong>464</strong> ViT checkpoints</span>
+          <span class="stat"><strong>177</strong> GPT-2 checkpoints</span>
+          <span class="stat"><strong>50</strong> LLaMA checkpoints</span>
+        </div>
         <div class="buttons">
           <a class="btn primary" href="./docs/loong_viewer.html">Open Full 3D Viewer</a>
           <a class="btn" href="./README.md">Repo README</a>
-          <a class="btn" href="./Main_weight_analysis/README.md">Additional Analysis</a>
+          <a class="btn" href="./Main_weight_analysis/README.md">Extended Analysis</a>
+          <a class="btn" href="./assets/unisub_mainfig.pdf">Main Figure</a>
           <a class="btn" href="./assets/Universal_Subspace.pdf">Paper PDF</a>
         </div>
       </section>
@@ -198,35 +248,39 @@
           <article class="card">
             <h2>What is shown here</h2>
             <p>
-              The viewer compares the original `loong` point cloud with its IID UniSub reconstruction using the committed
+              The viewer compares the original `loong` point cloud with its UniSub reconstruction using the committed
               `PLY` assets in `assets/showcase/`. This is a true interactive viewer, not a static image panel.
             </p>
+            <div class="callout">
+              <strong>Why this page exists:</strong> this is one of the clearest geometry comparisons in the project,
+              so it is worth making directly accessible.
+            </div>
           </article>
 
           <article class="card">
-            <h2>Repo Structure</h2>
+            <h2>Browse the repo</h2>
             <div class="mini-grid">
               <a class="mini" href="./CNN/README.md">
                 <strong>CNN</strong>
-                <span>Original paper-era scratch ResNet-50 code path.</span>
+                <span>Scratch ResNet-50 training and reconstruction.</span>
               </a>
               <a class="mini" href="./additional_R50/README.md">
                 <strong>additional_R50</strong>
-                <span>9-model spatial/alpha follow-up package.</span>
+                <span>9-model ResNet-50 analysis with alpha and calibration.</span>
               </a>
               <a class="mini" href="./Main_weight_analysis/README.md">
                 <strong>Main_weight_analysis</strong>
-                <span>Additional ViT, GPT-2, LLaMA, and ResNet analysis.</span>
+                <span>Extended ViT, GPT-2, LLaMA, and ResNet analysis.</span>
               </a>
               <a class="mini" href="./StyleGANV2/README.md">
                 <strong>StyleGAN2</strong>
-                <span>Validated generator reconstruction results.</span>
+                <span>Some of the cleanest visual UniSub results in the repo.</span>
               </a>
             </div>
           </article>
 
           <article class="card">
-            <h2>External follow-up work</h2>
+            <h2>Related projects</h2>
             <div class="mini-grid">
               <a class="mini" href="https://github.com/toshi2k2/EigenLoRA/">
                 <strong>EigenLoRA</strong>

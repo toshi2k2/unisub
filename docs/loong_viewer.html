@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UniSub Loong Viewer</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
       :root {
         --bg: #f5f0e7;
         --panel: rgba(255, 255, 255, 0.86);
@@ -120,6 +122,20 @@
         line-height: 1.6;
       }
 
+      .hero-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .hero-links a {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.9);
+      }
+
       .footer a {
         color: var(--accent);
       }
@@ -139,13 +155,18 @@
     <main class="shell">
       <section class="hero">
         <p class="eyebrow">Universal Subspace Viewer</p>
-        <h1>Loong: original vs IID UniSub reconstruction</h1>
+        <h1>Loong: original vs UniSub reconstruction</h1>
         <p>
-          This viewer compares the original GeomDist <code>loong</code> point cloud with its IID reconstruction
-          under the Universal Subspace. The meshes are loaded from committed
+          This viewer compares the original GeomDist <code>loong</code> point cloud with its UniSub reconstruction.
+          The meshes are loaded from committed
           <code>PLY</code> assets in <code>assets/showcase/</code>. Serve this file through GitHub Pages or a local
           static server such as <code>python -m http.server</code> from the repo root.
         </p>
+        <div class="hero-links">
+          <a href="../README.md">Repo README</a>
+          <a href="../GeomDist/README.md">GeomDist</a>
+          <a href="../assets/unisub_mainfig.pdf">Main Figure</a>
+        </div>
       </section>
 
       <section class="grid">
@@ -159,7 +180,7 @@
 
         <article class="panel">
           <header>
-            <h2>IID reconstruction</h2>
+            <h2>UniSub reconstruction</h2>
             <p>UniSub projection under the retained shared basis.</p>
           </header>
           <div class="viewport" id="viewer-iid"></div>
@@ -168,7 +189,7 @@
 
       <section class="footer">
         Drag to orbit, scroll to zoom, and compare the retained geometry. The same assets also appear as a static
-        paper-facing panel in <a href="../GeomDist/README.md">GeomDist/README.md</a>.
+        comparison panel in <a href="../GeomDist/README.md">GeomDist/README.md</a>.
       </section>
     </main>
 

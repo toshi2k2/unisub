@@ -1,6 +1,6 @@
 # GPT-2 Spectral Analysis
 
-For the newer alpha/scree follow-up analysis built on top of this directory, start with [`../Main_weight_analysis/gpt2/README.md`](../Main_weight_analysis/gpt2/README.md).
+For the newer alpha/scree analysis built on top of this directory, start with [`../Main_weight_analysis/gpt2/README.md`](../Main_weight_analysis/gpt2/README.md).
 
 Spectral analysis and PCA for GPT-2 model weights across multiple fine-tuned variants.
 
