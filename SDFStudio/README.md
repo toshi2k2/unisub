@@ -39,7 +39,7 @@ This package is intentionally lightweight. The actual code still lives in the ma
 If you already have the completed shared-init benchmark at:
 
 ```bash
-/mnt/data0/prakhar/sdfstudio_uwsh
+sdfstudio_uwsh
 ```
 
 you can skip directly to the alpha/UniSub analysis section.
@@ -77,7 +77,7 @@ The wrapper defaults to the validated settings:
 - `--alpha-min-fraction-in-range 0.3`
 - `--eval-max-images 4`
 - `--figure-images-per-scene 4`
-- output root `/mnt/data0/prakhar/sdfstudio_uwsh/analysis_alpha_unisub_v1`
+- output root `sdfstudio_uwsh/analysis_alpha_unisub_v1`
 
 Useful variants:
 
@@ -94,7 +94,7 @@ bash run_public_pipeline.sh \
 # Quick single-scene smoke
 bash run_public_pipeline.sh \
   --repo-dir "$SDFSTUDIO_REPO_DIR" \
-  --run-root /mnt/data0/prakhar/sdfstudio_uwsh \
+  --run-root sdfstudio_uwsh \
   --analysis-root /tmp/sdfstudio_alpha_unisub_smoke \
   --device cpu \
   --eval-max-images 1 \
@@ -108,8 +108,8 @@ Main validated run:
 
 ```bash
 SDFSTUDIO_USE_VENDOR_PY=1 python scripts/neus_plainmlp_alpha_unisub.py \
-  --run-root /mnt/data0/prakhar/sdfstudio_uwsh \
-  --analysis-root /mnt/data0/prakhar/sdfstudio_uwsh/analysis_alpha_unisub_v1 \
+  --run-root sdfstudio_uwsh \
+  --analysis-root sdfstudio_uwsh/analysis_alpha_unisub_v1 \
   --alpha-min-fraction-in-range 0.3 \
   --eval-max-images 4 \
   --figure-images-per-scene 4 \
@@ -120,8 +120,8 @@ Alpha-only dry run:
 
 ```bash
 SDFSTUDIO_USE_VENDOR_PY=1 python scripts/neus_plainmlp_alpha_unisub.py \
-  --run-root /mnt/data0/prakhar/sdfstudio_uwsh \
-  --analysis-root /mnt/data0/prakhar/sdfstudio_uwsh/analysis_alpha_unisub_v1 \
+  --run-root sdfstudio_uwsh \
+  --analysis-root sdfstudio_uwsh/analysis_alpha_unisub_v1 \
   --alpha-min-fraction-in-range 0.3 \
   --skip-reconstruction \
   --skip-eval
@@ -130,10 +130,10 @@ SDFSTUDIO_USE_VENDOR_PY=1 python scripts/neus_plainmlp_alpha_unisub.py \
 Eval-only sharded rerun after reconstructions already exist:
 
 ```bash
-/mnt/data1/prakhar/sdfstudio/run_eval_shards.sh \
-  /mnt/data1/prakhar/sdfstudio \
-  /mnt/data0/prakhar/sdfstudio_uwsh/analysis_alpha_unisub_v1 \
-  /mnt/data0/prakhar/sdfstudio_uwsh
+/sdfstudio/run_eval_shards.sh \
+  /sdfstudio \
+  sdfstudio_uwsh/analysis_alpha_unisub_v1 \
+  sdfstudio_uwsh
 ```
 
 ## What The Script Does
@@ -243,7 +243,7 @@ Interpretation:
 Main output root:
 
 ```bash
-/mnt/data0/prakhar/sdfstudio_uwsh/analysis_alpha_unisub_v1
+sdfstudio_uwsh/analysis_alpha_unisub_v1
 ```
 
 Important artifacts:

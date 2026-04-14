@@ -45,7 +45,7 @@ The original paper-era scripts are copied into [`scripts/`](./scripts/):
 Run path:
 
 ```bash
-cd /mnt/data0/prakhar/unisub/Main_weight_analysis/gpt2
+cd unisub/Main_weight_analysis/gpt2
 
 python scripts/download_models.py --model_name_file scripts/gpt2.txt --target_folder ./gpt2_models
 python scripts/run_pca.py --model_directory ./gpt2_models --target_folder ./gpt2_plots

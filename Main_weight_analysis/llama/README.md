@@ -44,7 +44,7 @@ The original paper-era scripts are copied into [`scripts/`](./scripts/):
 Run path:
 
 ```bash
-cd /mnt/data0/prakhar/unisub/Main_weight_analysis/llama
+cd unisub/Main_weight_analysis/llama
 
 python scripts/download_models.py --model_name_file scripts/llama_models.txt --target_folder ./llama_models
 python scripts/run_pca.py --model_directory ./llama_models --target_folder ./llama_plots

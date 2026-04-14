@@ -61,7 +61,7 @@ Those settings are required on this host because the default threaded BLAS / Num
 Set the main repo path and run:
 
 ```bash
-cd /mnt/data0/prakhar/unisub/GeomDist
+cd unisub/GeomDist
 export GEOMDIST_REPO_DIR=/path/to/GeomDist
 bash run_public_pipeline.sh \
   --repo-dir "$GEOMDIST_REPO_DIR" \
@@ -78,7 +78,7 @@ Outputs go to:
 If you only want the lightweight finalizer on an already-computed analysis root:
 
 ```bash
-cd /mnt/data0/prakhar/unisub/GeomDist
+cd unisub/GeomDist
 export GEOMDIST_REPO_DIR=/path/to/GeomDist
 python "$GEOMDIST_REPO_DIR/geomdist_finalize_analysis.py" \
   --analysis-root results/analysis_alpha_unisub_v1 \
@@ -89,7 +89,7 @@ python "$GEOMDIST_REPO_DIR/geomdist_finalize_analysis.py" \
 Optional OOD coefficient rescue on the strongest OOD scenes:
 
 ```bash
-cd /mnt/data0/prakhar/unisub/GeomDist
+cd unisub/GeomDist
 export GEOMDIST_REPO_DIR=/path/to/GeomDist
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
 MPLCONFIGDIR="$PWD/.mplconfig" \
@@ -112,7 +112,7 @@ python "$GEOMDIST_REPO_DIR/geomdist_coeff_finetune.py" \
 Optional dense paper figures and colored PLY exports:
 
 ```bash
-cd /mnt/data0/prakhar/unisub/GeomDist
+cd unisub/GeomDist
 export GEOMDIST_REPO_DIR=/path/to/GeomDist
 MPLCONFIGDIR="$PWD/.mplconfig" \
 python "$GEOMDIST_REPO_DIR/geomdist_compose_paper_figures.py" \
